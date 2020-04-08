@@ -3,6 +3,8 @@ namespace SimplecURL;
 
 class Client {
 
+    protected $useragent;
+
     const VERSION = '0.1.0';
 
     public function __construct() {

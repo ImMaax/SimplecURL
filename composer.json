@@ -16,5 +16,8 @@
         "psr-4": {
             "SimplecURL\\": "src/"
         }
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^0.12.18"
     }
 }
