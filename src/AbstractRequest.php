@@ -13,6 +13,10 @@ abstract class AbstractRequest {
 
     protected $headers;
 
+    protected $allowRedirects;
+
+    protected $maxRedirects;
+
     public function setMethod(string $method): void {
         $this->method = $method;
     }
@@ -33,6 +37,18 @@ abstract class AbstractRequest {
         $this->postfields = $fields;
     }
 
-    abstract function send(): Response;
+    public function disallowRedirects(): void {
+        $this->allowRedirects = false;
+    }
+
+    public function allowRedirects(): void {
+        $this->allowRedirects = true;
+    }
+
+    public function maxRedirects(int $maxRedirects): void {
+        $this->maxRedirects = $maxRedirects;
+    }
+
+    abstract public function send(): Response;
 
 }

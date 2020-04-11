@@ -8,6 +8,7 @@ class Request extends AbstractRequest {
 
         $ch = curl_init();
         $headers = [];
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, $this->allowRedirects);
         curl_setopt($ch, CURLOPT_URL, $this->url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_USERAGENT, $this->useragent);
@@ -23,7 +24,14 @@ class Request extends AbstractRequest {
                 return $len;
             }
         );
-        if (!empty($this->headers)) curl_setopt($ch, CURLOPT_HTTPHEADER, $this->headers);
+        
+        if (!empty($this->headers)) {
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $this->headers);
+        }
+
+        if (!empty($this->maxRedirects)) {
+            curl_setopt($ch, CURLOPT_MAXREDIRS, $this->maxRedirects);
+        }
 
         switch($this->method) {
             case 'GET':     curl_setopt($ch, CURLOPT_HTTPGET, 1); break;

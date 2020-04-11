@@ -10,6 +10,10 @@ $res = $client->request('POST', 'http://127.0.0.1:8080/', [
     ],
     'postfields' => [
         'Foo' => 'Bar'
+    ],
+    'redirects' => [
+        'allow' => true,
+        'maxRedirects' => 5
     ]
 ]);
 
