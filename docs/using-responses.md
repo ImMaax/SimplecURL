@@ -27,4 +27,16 @@ print_r($res->getHeaders());        # => Prints an array of all headers and thei
 print_r($res->getHeader('name'));   # => Prints an array with the value of the header "name": [0 => 'Value']
 ```
 
+## Getting the Status Code
+
+You can get the status code using `getStatusCode`:
+
+```php
+$res = $client->request('GET', 'http://127.0.0.1:8080/');
+
+echo $res->getStatusCode();
+```
+
+It is a 3 digit integer.
+
 *Next: [Custom Headers and the User-Agent](custom-headers-and-the-user-agent.md)*

@@ -24,3 +24,5 @@ $res = $client->request('GET', 'http://127.0.0.1:8080/', [
 ```
 
 This will add the header `Name` with a value of `Value`.
+
+*Next: [Following Redirects](following-redirects.md)*
