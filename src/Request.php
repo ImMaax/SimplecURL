@@ -45,6 +45,7 @@ class Request extends AbstractRequest {
             throw new HttpRequestException(curl_errno($ch) . ' - ' . curl_error($ch));
         }
 
+        $res->setStatusCode(curl_getinfo($ch, CURLINFO_HTTP_CODE));
         $res->setHeaders($headers);
         $res->setBody($body);
 

@@ -7,6 +7,8 @@ class Response {
 
     protected $body;
 
+    protected $statusCode;
+
     public function getHeaders(): array {
         return $this->headers;
     }
@@ -39,6 +41,14 @@ class Response {
 
     public function setBody(string $body): void {
         $this->body = $body;
+    }
+
+    public function setStatusCode(int $status): void {
+        $this->statusCode = $status;
+    }
+
+    public function getStatusCode(): int {
+        return $this->statusCode;
     }
 
 }

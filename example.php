@@ -19,3 +19,4 @@ $res = $client->request('POST', 'http://127.0.0.1:8080/', [
 
 print_r($res->getHeaders());
 echo $res->getBody();
+echo $res->getStatusCode();
