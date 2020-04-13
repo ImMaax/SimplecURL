@@ -1,5 +1,7 @@
 # SimplecURL
 
+[![Build Status](https://travis-ci.org/SimplecURL/SimplecURL.svg?branch=master)](https://travis-ci.org/SimplecURL/SimplecURL)
+
 SimplecURL is a simple and modern wrapper around PHP's [`ext-curl`](https://www.php.net/manual/en/book.curl.php).
 
 ```php
