@@ -1,6 +1,6 @@
 # SimplecURL - Custom Headers and the User Agent
 
-## Chaning the User Agent
+## Changing the User Agent
 
 Under some circumstances you may need to change the library's user agent (the default user agent looks like this: `SimplecURL/0.1.0 (like cURL/7.67.0; PHP/7.4.1)`):
 
