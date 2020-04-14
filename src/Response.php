@@ -51,4 +51,14 @@ class Response {
         return $this->statusCode;
     }
 
+    public function json(): object {
+        $json = json_decode($this->getBody());
+
+        if ($json === null && json_last_error() !== JSON_ERROR_NONE) {
+            throw new JsonConversionException('Invalid JSON data supplied!');
+        }
+
+        return $json;
+    }
+
 }

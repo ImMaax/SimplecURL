@@ -16,6 +16,20 @@ $res = $client->request('GET', 'http://127.0.0.1:8080/');
 echo $res->getBody();
 ```
 
+### JSON
+
+To convert a JSON response to an object, use `json()`:
+
+```php
+$res = $client->request('GET', 'http://127.0.0.1:8080/');
+print_r($res->json());
+# +----+
+# | Or |
+# +----+
+$res = $client->request('GET', 'http://127.0.0.1:8080/')->json();
+print_r($res);
+```
+
 ## Getting Headers
 
 There are multiple ways to get all or one specific header:

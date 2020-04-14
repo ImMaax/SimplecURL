@@ -26,7 +26,7 @@ class RequestTest extends TestCase {
         ]);
         $this->assertInstanceOf(SimplecURL\Response::class, $res);
         
-        $json = json_decode($res->getBody());
+        $json = $res->json();
         $this->assertObjectHasAttribute('Unit', $json->form);
     }
 
@@ -35,10 +35,9 @@ class RequestTest extends TestCase {
             'headers' => [
                 'X-Unit-Test: True'
             ]
-        ]);
-        
-        $json = json_decode($res->getBody());
-        $this->assertObjectHasAttribute('X-Unit-Test', $json->headers);
+        ])->json()->headers;
+
+        $this->assertObjectHasAttribute('X-Unit-Test', $res);
     }
 
     public function testRedirectsAllowed(): void {
@@ -57,10 +56,9 @@ class RequestTest extends TestCase {
 
     public function testUseragent(): void {
         $this->client->setUseragent('UnitTestRequest/0.1.0');
-        $res = $this->client->request('GET', 'http://httpbin.org/user-agent');
+        $res = $this->client->request('GET', 'http://httpbin.org/user-agent')->json()->{'user-agent'};
 
-        $json = json_decode($res->getBody());
-        $this->assertEquals('UnitTestRequest/0.1.0', $json->{'user-agent'});
+        $this->assertEquals('UnitTestRequest/0.1.0', $res);
     }
 
 }

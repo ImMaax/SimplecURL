@@ -6,7 +6,7 @@ class ResponseTest extends TestCase {
     protected $res;
 
     public function setUp(): void {
-        $this->res = (new SimplecURL\Client)->request('GET', 'https://httpbin.org/get');
+        $this->res = (new SimplecURL\Client)->request('GET', 'https://httpbin.org/json');
     }
 
     public function testBody(): void {
@@ -23,6 +23,10 @@ class ResponseTest extends TestCase {
 
     public function testStatusCode(): void {
         $this->assertIsInt($this->res->getStatusCode());
+    }
+
+    public function testJsonConversion(): void {
+        $this->assertIsObject($this->res->json());
     }
 
 }
