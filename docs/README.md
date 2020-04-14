@@ -12,3 +12,7 @@ echo $res->getBody();
 ## Table of Contents
 
 - [Installation](installation.md)
+- [Making a Request](making-a-request.md)
+- [Using Responses](using-responses.md)
+- [Custom Headers and the User-Agent](custom-headers-and-the-user-agent.md)
+- [Following Redirects](following-redirects.md)
