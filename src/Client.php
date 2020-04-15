@@ -5,10 +5,13 @@ class Client {
 
     protected $useragent;
 
-    const VERSION = '0.1.0';
+    protected $baseurl;
 
-    public function __construct() {
+    const VERSION = '0.1.2';
+
+    public function __construct(string $baseurl = '') {
         $this->setUseragent($this->defaultUseragent());
+        $this->baseurl = $baseurl;
     }
 
     public function setUseragent(string $useragent): void {
@@ -24,7 +27,7 @@ class Client {
 
         $req->allowRedirects();
         $req->setMethod($method);
-        $req->setUrl($url);
+        $req->setUrl($this->baseurl . $url);
         $req->setUseragent($this->getUseragent());
 
         if (isset($options['headers'])) {

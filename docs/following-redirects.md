@@ -22,3 +22,5 @@ $res = $client->request('POST', 'http://127.0.0.1:8080/', [
 ```
 
 This example disables redirects completely.
+
+*[Next: Base URL](base-url.md)*

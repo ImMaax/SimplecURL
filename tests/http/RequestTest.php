@@ -6,7 +6,7 @@ class RequestTest extends TestCase {
     protected $client;
 
     public function setUp(): void {
-        $this->client = new SimplecURL\Client;
+        $this->client = new SimplecURL\Client('https://httpbin.org');
     }
 
     public function testClient(): void {
@@ -14,12 +14,12 @@ class RequestTest extends TestCase {
     }
 
     public function testGet(): void {
-        $res = $this->client->request('GET', 'https://httpbin.org/get');
+        $res = $this->client->request('GET', '/get');
         $this->assertInstanceOf(SimplecURL\Response::class, $res);
     }
 
     public function testPost(): void {
-        $res = $this->client->request('POST', 'https://httpbin.org/post', [
+        $res = $this->client->request('POST', '/post', [
             'postfields' => [
                 'Unit' => 'Test'
             ]
@@ -31,7 +31,7 @@ class RequestTest extends TestCase {
     }
 
     public function testHeaders(): void {
-        $res = $this->client->request('GET', 'https://httpbin.org/headers', [
+        $res = $this->client->request('GET', '/headers', [
             'headers' => [
                 'X-Unit-Test: True'
             ]
@@ -42,7 +42,7 @@ class RequestTest extends TestCase {
 
     public function testRedirectsAllowed(): void {
         try {
-            $res = $this->client->request('GET', 'https://httpbin.org/headers', [
+            $res = $this->client->request('GET', '/headers', [
                 'redirects' => [
                     'allow' => true
                 ]
@@ -56,7 +56,7 @@ class RequestTest extends TestCase {
 
     public function testUseragent(): void {
         $this->client->setUseragent('UnitTestRequest/0.1.0');
-        $res = $this->client->request('GET', 'http://httpbin.org/user-agent')->json()->{'user-agent'};
+        $res = $this->client->request('GET', '/user-agent')->json()->{'user-agent'};
 
         $this->assertEquals('UnitTestRequest/0.1.0', $res);
     }
