@@ -13,6 +13,8 @@ echo $res->getBody();
 
 - [Installation](installation.md)
 - [Making a Request](making-a-request.md)
+- [Parameter Bags](parameter-bags.md)
 - [Using Responses](using-responses.md)
 - [Custom Headers and the User-Agent](custom-headers-and-the-user-agent.md)
 - [Following Redirects](following-redirects.md)
+- [Base URL](base-url.md)

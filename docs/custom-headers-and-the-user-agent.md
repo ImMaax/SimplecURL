@@ -16,6 +16,15 @@ The above code snippet sets the client's user agent to `CustomUA/1.0.0`. It will
 Attaching custom headers to a request is very easy:
 
 ```php
+$bag = new SimplecURL\ParameterBag;
+$bag->setHeader('Name', 'Value');
+
+$res = $client->request('GET', 'http://127.0.0.1:8080/', $bag);
+
+# +----+
+# | Or |
+# +----+
+
 $res = $client->request('GET', 'http://127.0.0.1:8080/', [
     'headers' => [
         'Name: Value'

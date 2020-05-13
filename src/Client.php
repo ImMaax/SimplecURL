@@ -22,7 +22,30 @@ class Client {
         return $this->useragent;
     }
 
-    public function request(string $method, string $url, array $options = []): Response {
+    public function request(string $method, string $url, $options = []): Response {
+        switch (gettype($options)) {
+            case 'array':
+                # Everything stays the same
+            break;
+            case 'object':
+                if (get_class($options) != 'SimplecURL\\ParameterBag') {
+                    throw new \InvalidArgumentException('The options passed to a new request must be either an array or a ParameterBag, got ' . get_class($options));
+                }
+
+                $parameters = $options;
+                $options = [
+                    'redirects' => []
+                ];
+
+                $options['headers'] = $parameters->getHeaders();
+                $options['postfields'] = $parameters->getPostfields();
+                $options['redirects']['allow'] = $parameters->getRedirectsAllowed();
+                $options['redirects']['max'] = $parameters->getMaxRedirects();
+            break;
+            default:
+                throw new \InvalidArgumentException('The options passed to a new request must be either an array or a ParameterBag, got ' . gettype($options));
+        }
+
         $req = new Request();
 
         $req->allowRedirects();
@@ -45,6 +68,8 @@ class Client {
 
             if (isset($options['redirects']['max'])) {
                 $req->maxRedirects($options['redirects']['max']);
+            } else {
+                $req->maxRedirects(10);
             }
         }
 

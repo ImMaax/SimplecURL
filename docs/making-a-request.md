@@ -36,4 +36,4 @@ $res = $client->request('POST', 'http://127.0.0.1:8080/', [
 
 This will add the `POST` parameter `Foo` with a value of `Bar` to your request.
 
-*Next: [Using Responses](using-responses.md)*
+*Next: [Parameter Bags](parameter-bags.md)*
