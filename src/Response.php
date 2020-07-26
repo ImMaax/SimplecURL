@@ -51,7 +51,10 @@ class Response {
         return $this->statusCode;
     }
 
-    public function json(): object {
+    /**
+     * @return object|array
+     */
+    public function json() {
         $json = json_decode($this->getBody());
 
         if ($json === null && json_last_error() !== JSON_ERROR_NONE) {
