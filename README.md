@@ -1,7 +1,7 @@
 # SimplecURL
 
 [![Build Status](https://travis-ci.org/ImMaax/SimplecURL.svg?branch=master)](https://travis-ci.org/ImMaax/SimplecURL)
-[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability-percentage/SimplecURL/SimplecURL)](https://codeclimate.com/github/SimplecURL/SimplecURL)
+[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability-percentage/ImMaax/SimplecURL)](https://codeclimate.com/github/ImMaax/SimplecURL)
 
 SimplecURL is a simple and modern wrapper around PHP's [`ext-curl`](https://www.php.net/manual/en/book.curl.php).
 
