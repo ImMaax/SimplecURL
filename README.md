@@ -1,6 +1,6 @@
 # SimplecURL
 
-[![Build Status](https://travis-ci.org/SimplecURL/SimplecURL.svg?branch=master)](https://travis-ci.org/SimplecURL/SimplecURL)
+[![Build Status](https://travis-ci.org/ImMaax/SimplecURL.svg?branch=master)](https://travis-ci.org/ImMaax/SimplecURL)
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability-percentage/SimplecURL/SimplecURL)](https://codeclimate.com/github/SimplecURL/SimplecURL)
 
 SimplecURL is a simple and modern wrapper around PHP's [`ext-curl`](https://www.php.net/manual/en/book.curl.php).
@@ -20,4 +20,4 @@ composer require simplecurl/simplecurl
 
 ## Docs
 
-Docs can be found in `/docs` or at [https://simplecurl.github.io/SimplecURL/](https://simplecurl.github.io/SimplecURL/).
+Docs can be found in `/docs` or at [https://immaax.github.io/SimplecURL/](https://immaax.github.io/SimplecURL/).
