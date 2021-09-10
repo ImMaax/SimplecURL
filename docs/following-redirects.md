@@ -1,5 +1,9 @@
 # SimplecURL - Following Redirects
 
+**This project is archived. Use at your own caution.**
+
+---
+
 By default, SimplecURL follows all redirects. However, you can either completely disable that behavior or limit it to a given number of redirects:
 
 ```php

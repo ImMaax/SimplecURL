@@ -1,5 +1,9 @@
 # SimplecURL - Parameter Bags
 
+**This project is archived. Use at your own caution.**
+
+---
+
 ## What are they and how do they work?
 
 Look at the following request example:

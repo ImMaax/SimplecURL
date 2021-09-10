@@ -1,5 +1,9 @@
 # SimplecURL - Installation
 
+**This project is archived. Use at your own caution.**
+
+---
+
 SimplecURL is installed using [Composer](https://getcomposer.org/):
 
 ```sh

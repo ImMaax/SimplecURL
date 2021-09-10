@@ -1,5 +1,9 @@
 # SimplecURL - Making a Request
 
+**This project is archived. Use at your own caution.**
+
+---
+
 ## Creating a new Client
 
 To make requests, you need to create a client:

@@ -1,5 +1,9 @@
 # SimplecURL - Using Responses
 
+**This project is archived. Use at your own caution.**
+
+---
+
 Say you have a request like this:
 
 ```php

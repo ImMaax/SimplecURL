@@ -1,5 +1,9 @@
 # SimplecURL
 
+**This project is archived! Use at your own caution.**
+
+---
+
 [![Build Status](https://travis-ci.org/ImMaax/SimplecURL.svg?branch=master)](https://travis-ci.org/ImMaax/SimplecURL)
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability-percentage/ImMaax/SimplecURL)](https://codeclimate.com/github/ImMaax/SimplecURL)
 

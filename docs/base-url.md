@@ -1,5 +1,9 @@
 # SimplecURL - Base URL
 
+**This project is archived. Use at your own caution.**
+
+---
+
 You can set a base URL for every request:
 
 ```php

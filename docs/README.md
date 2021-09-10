@@ -1,5 +1,9 @@
 # SimplecURL Documentation
 
+**This project is archived. Use at your own caution.**
+
+---
+
 Welcome to the SimplecURL docs! SimplecURL is an object-oriented wrapper around PHP's `ext-curl`. It allows for easy and quick HTTP requests.
 
 ```php
